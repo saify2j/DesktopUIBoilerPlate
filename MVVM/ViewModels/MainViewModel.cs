@@ -1,4 +1,5 @@
 ﻿using DashboardBoilerPlate.Core;
+using DashboardBoilerPlate.MVVM.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +13,11 @@ namespace DashboardBoilerPlate.MVVM.ViewModels
         public RelayCommand HomeViewCommand { get; set; }
         public RelayCommand ChartViewCommand { get; set; }
 
+        public PCInfo PCInfo { get; set; }
 
         public ChartViewModel ChartVM { get; set; }
         public HomeViewModel HomeVM { get; set; }
+
         private object _currentView;
 
         public object CurrentView
@@ -42,6 +45,12 @@ namespace DashboardBoilerPlate.MVVM.ViewModels
             {
                 CurrentView = ChartVM;
             });
+            PCInfo = new PCInfo();
+            PCInfo.PCName = Environment.MachineName;
+            PCInfo.CoreCount = Environment.ProcessorCount.ToString();
+            PCInfo.Ram = Environment.WorkingSet.ToString();
+            PCInfo.OSVersion = Environment.OSVersion.ToString();
+            PCInfo.GPUName = "NVIDIA GTX 1050TI"; //NEED TO GET DYNAMICALLY
         }
     }
 }

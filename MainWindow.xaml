@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DashboardBoilerPlate"
         xmlns:viewModel="clr-namespace:DashboardBoilerPlate.MVVM.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="920"
+        Title="MainWindow" Height="600" Width="1080"
         ResizeMode="NoResize"
         Background="Transparent"
         WindowStyle="None"

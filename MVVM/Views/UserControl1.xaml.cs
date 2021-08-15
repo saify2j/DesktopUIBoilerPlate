@@ -22,6 +22,7 @@ namespace DashboardBoilerPlate.MVVM.Views
     {
         public UserControl1()
         {
+
             InitializeComponent();
         }
     }

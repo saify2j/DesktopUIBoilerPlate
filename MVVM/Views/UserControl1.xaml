@@ -4,8 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DashboardBoilerPlate.MVVM.Views"
+             xmlns:viewModels="clr-namespace:DashboardBoilerPlate.MVVM.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="520" d:DesignWidth="800">
     <StackPanel>
         <TextBlock
             Text="Discover"
@@ -45,9 +46,185 @@
                            Source="/Images/sloth.png" Margin="182,0,-32,-16"/>
                 </Grid>
             </Border>
-
         </StackPanel>
+        <TextBlock
+            Text="PC Information"
+            Foreground="White"
+            FontSize="28"
+            Margin="0,0,0,10"></TextBlock>
+        <StackPanel Orientation="Horizontal">
+            <Border
+                Width="180"
+                Height="200"
+                Margin="0,0,0,0"
+                >
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                        <GradientStop Color="#FF2D3D3E" Offset="0.0"/>
+                        <GradientStop Color="#5B86E5" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10"
+                                       RadiusY="10"
+                                       Rect="0,0,180,200"/>
+                </Border.Clip>
+                <Grid>
+                    <Grid.DataContext>
+                        <viewModels:MainViewModel/>
+                    </Grid.DataContext>
+                    <StackPanel>
+                        <TextBlock 
+                            Foreground="Wheat"
+                            Text="PC Info"
+                            FontSize="25"
+                            Margin="20,10,10,0"></TextBlock>
+                        <TextBlock 
+                            Foreground="Wheat"
+                            Text="PC Name:"
+                            FontSize="18"
+                            Margin="20,10,10,0"></TextBlock>
+                        <TextBlock 
+                            Foreground="Orange"
+                            Text="{Binding PCInfo.PCName}"
+                            FontSize="16"
+                            Margin="20,2,10,0"></TextBlock>
+                        <TextBlock 
+                            Foreground="Wheat"
+                            Text="OS Version:"
+                            FontSize="18"
+                            Margin="20,10,10,0"></TextBlock>
+                        <TextBlock 
+                            Foreground="Orange"
+                            Text="{Binding PCInfo.OSVersion}"
+                            FontSize="10"
+                            Margin="20,2,10,0" Height="34"></TextBlock>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Border
+                Width="180"
+                Height="200"
+                Margin="10,0,0,0"
+                >
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                        <GradientStop Color="#FF2D3D3E" Offset="0.0"/>
+                        <GradientStop Color="#5B86E5" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10"
+                                       RadiusY="10"
+                                       Rect="0,0,180,200"/>
+                </Border.Clip>
+                <Grid>
+                    <Grid.DataContext>
+                        <viewModels:MainViewModel/>
+                    </Grid.DataContext>
+                    <StackPanel>
+                        <TextBlock 
+                            Foreground="Wheat"
+                            Text="CPU Info"
+                            FontSize="25"
+                            Margin="20,10,10,0"></TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock 
+                            Foreground="Wheat"
+                            Text="Processor:"
+                            FontSize="16"
+                            Margin="20,10,10,0"></TextBlock>
+                            <TextBlock 
+                            Foreground="Orange"
+                            Text=" i5 8400"
+                            FontSize="16"
+                            Margin="0,10,10,0"></TextBlock>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock 
+                            Foreground="Wheat"
+                            Text="Core Count:"
+                            FontSize="16"
+                            Margin="20,10,10,0"></TextBlock>
+                            <TextBlock 
+                            Foreground="Orange"
+                            Text="{Binding PCInfo.CoreCount}"
+                            FontSize="16"
+                            Margin="0,10,10,0"></TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Border
+                Width="180"
+                Height="200"
+                Margin="10,0,0,0"
+                >
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                        <GradientStop Color="#FF2D3D3E" Offset="0.0"/>
+                        <GradientStop Color="#5B86E5" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10"
+                                       RadiusY="10"
+                                       Rect="0,0,180,200"/>
+                </Border.Clip>
+                <Grid>
+                    <Grid.DataContext>
+                        <viewModels:MainViewModel/>
+                    </Grid.DataContext>
+                    <StackPanel>
+                        <TextBlock 
+                            Foreground="Wheat"
+                            Text="RAM Info"
+                            FontSize="25"
+                            Margin="20,10,10,0"></TextBlock>
 
+                        <TextBlock 
+                            Foreground="Orange"
+                            Text="{ Binding PCInfo.Ram}"
+                            FontSize="16"
+                            Margin="20,10,10,0"></TextBlock>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Border
+                Width="180"
+                Height="200"
+                Margin="10,0,0,0"
+                >
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                        <GradientStop Color="#FF2D3D3E" Offset="0.0"/>
+                        <GradientStop Color="#5B86E5" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10"
+                                       RadiusY="10"
+                                       Rect="0,0,180,200"/>
+                </Border.Clip>
+                <Grid>
+                    <Grid.DataContext>
+                        <viewModels:MainViewModel/>
+                    </Grid.DataContext>
+                    <StackPanel>
+                        <TextBlock 
+                            Foreground="Wheat"
+                            Text="GPU Info"
+                            FontSize="25"
+                            Margin="20,10,10,0"></TextBlock>
+                        <TextBlock 
+                            Foreground="Orange"
+                            Text="{Binding PCInfo.GPUName}"
+                            FontSize="16"
+                            Margin="20,10,10,0"></TextBlock>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </StackPanel>
     </StackPanel>
 
 </UserControl>
