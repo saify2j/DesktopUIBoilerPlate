@@ -1,0 +1,22 @@
+﻿<Application x:Class="DashboardBoilerPlate.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:DashboardBoilerPlate"
+             xmlns:viewModel="clr-namespace:DashboardBoilerPlate.MVVM.ViewModels"
+             xmlns:view="clr-namespace:DashboardBoilerPlate.MVVM.Views"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/MenuButtonTheme.xaml" />
+                <ResourceDictionary Source="Themes/SearchBoxTheme.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+                <view:UserControl1/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ChartViewModel}">
+                <view:ChartView/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

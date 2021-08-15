@@ -1,0 +1,166 @@
+﻿<Window x:Class="DashboardBoilerPlate.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DashboardBoilerPlate"
+        xmlns:viewModel="clr-namespace:DashboardBoilerPlate.MVVM.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="920"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        WindowStyle="None"
+        AllowsTransparency="True"
+          
+        >
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+    <Border Background="#272537"
+            CornerRadius="25">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Logo"
+                       Foreground="White"
+                       FontSize="22"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Margin="20,0,0,0">
+                
+            </TextBlock>
+            <StackPanel Grid.Row="1">
+                <RadioButton Content="Home"
+                             Foreground="White"
+                             FontSize="14"
+                             Height="50"
+                             Style="{StaticResource MenuButtonTheme}"
+                             IsChecked="True"
+                             Command="{Binding HomeViewCommand}">
+                            
+                </RadioButton>
+                <RadioButton Content="Charts"
+                             Foreground="White"
+                             FontSize="14"
+                             Height="50"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding ChartViewCommand}">
+
+                </RadioButton>
+                <RadioButton Content="Settings"
+                             Foreground="White"
+                             FontSize="14"
+                             Height="50"
+                             Style="{StaticResource MenuButtonTheme}">
+
+                </RadioButton>
+            </StackPanel>
+            <TextBox
+                Grid.Column="1"
+                Height="50"
+                Width="250"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Margin="20,0,0,0"
+                Style="{StaticResource SearchBoxTheme}"
+                ></TextBox>
+            <StackPanel Grid.Row="0"
+                        Grid.Column="1"
+                        HorizontalAlignment="Right"
+                        Orientation="Horizontal">
+                <Button Width="30"
+                        Height="40"
+                        Margin="0,-4,0,20"
+                        VerticalAlignment="Top"
+                        Background="Transparent"
+                        Content="_"
+                        FontSize="30"
+                        Foreground="White"
+                        BorderThickness="0"
+                        FontWeight="Bold"
+                        ></Button>
+                <Button Width="30"
+                        Height="40"
+                        Margin="0,0,0,0"
+                        VerticalAlignment="Top"
+                        Background="Transparent"
+                        Content="□"
+                        FontSize="30"
+                        Foreground="White"
+                        BorderThickness="0"
+                        FontWeight="Bold"
+                        ></Button>
+                <Button Width="30"
+                        Height="40"
+                        Margin="0,5,20,0"
+                        VerticalAlignment="Top"
+                        Background="Transparent"
+                        Content="✖"
+                        FontSize="15"
+                        Foreground="White"
+                        BorderThickness="0"
+                        ></Button>
+            </StackPanel>
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10"
+                            Content="{Binding CurrentView}"/>
+        </Grid>
+    </Border>
+    <!--<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Background="Teal"
+            Grid.ColumnSpan="2" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock
+                Text="Company"
+                Foreground="White"
+                FontSize="20"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Grid.Column="0"
+                Margin="0,0,0,0"
+                />
+            <TextBlock
+                Text="Menu"
+                Foreground="PeachPuff"
+                FontSize="20"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Grid.Column="1"
+                Cursor="Hand"
+                />
+            <TextBlock
+                Text="Website"
+                Foreground="PeachPuff"
+                FontSize="20"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Grid.Column="2"
+                Cursor="Hand"
+                />
+        </Grid>
+       
+    </Grid>-->
+    
+</Window>
